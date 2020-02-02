@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'JsonController@index');
+
+Route::get('/editview/{id}', 'JsonController@editview');
+
+Route::get('/createview', 'JsonController@createview');
+
+Route::post('/create', 'JsonController@create');
+
+Route::post('/edit/{id}', 'JsonController@edit');
