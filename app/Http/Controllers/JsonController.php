@@ -7,11 +7,6 @@ use Illuminate\Http\Request;
 
 class JsonController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $jsons = Json::all();
@@ -47,6 +42,15 @@ class JsonController extends Controller
         $json->save();
 
         return redirect('/');
+    }
+
+    public function api($id)
+    {
+        $json = Json::find($id);
+
+        $json_response = $json->response;
+
+        return response($json_response)->header('Content-Type', 'application/json');
     }
 
 }
