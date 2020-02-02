@@ -8,6 +8,15 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script>
+        $(function() {
+            var response = $('#response').val();
+            var response = response.slice( 0, -1 );
+            $("#response").text(response);
+        });
+        
+        </script>
     </head>
     <body>
         <div><a href="{{ url('/') }}"> 一覧 </a></div>
