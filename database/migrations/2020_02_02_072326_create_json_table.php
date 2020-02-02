@@ -15,6 +15,8 @@ class CreateJsonTable extends Migration
     {
         Schema::create('json', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->json('response');
             $table->timestamps();
         });
     }
